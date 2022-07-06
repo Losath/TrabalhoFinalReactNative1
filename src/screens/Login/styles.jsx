@@ -27,7 +27,6 @@ export const TextInput = styled.TextInput`
     font-size: 20px;
     border-radius: 20px;
     width: 90%;
-    outline: none;
 `
 
 
