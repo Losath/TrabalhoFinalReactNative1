@@ -15,7 +15,7 @@ const Contatos = () => {
             <Text style={styles.titulo}>Contatos</Text>
           </View>
     
-          <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993669880182214666/PHOTO-2022-07-04-20-44-50.jpg' }} />
+          <Image style={styles.img} source={{ }} />
           <View style={styles.card}>
             <Text style={styles.baseText}>Douglas Moreira</Text>
             <View style={styles.icon}>
@@ -27,7 +27,7 @@ const Contatos = () => {
           </View>
     
     
-          <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993677447918792744/PHOTO-2022-07-04-21-37-41.jpg' }} />
+          <Image style={styles.img} source={{ }} />
     
           <View style={styles.card}>
     
@@ -55,7 +55,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993669490934034574/IMG_7676.jpg' }} />
+          <Image style={styles.img} source={{}} />
     
           <View style={styles.card}>
     
@@ -69,7 +69,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/981604231809208390/993665187217424484/46912843_1917505221671329_2213806137847840768_n.jpg' }} />
+          <Image style={styles.img} source={{  }} />
     
           <View style={styles.card}>
     
@@ -83,7 +83,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993670159665463427/PHOTO-2022-07-04-20-35-21.jpg' }} />
+          <Image style={styles.img} source={{}} />
     
           <View style={styles.card}>
     
@@ -97,7 +97,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993678031581364284/PHOTO-2022-07-04-21-41-04.jpg' }} />
+          <Image style={styles.img} source={{}} />
     
           <View style={styles.card}>
     

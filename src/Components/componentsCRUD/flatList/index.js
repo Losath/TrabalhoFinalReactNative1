@@ -33,6 +33,9 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
         setModalVisible(!isModalVisible)
         adicionarProduto()
     }
+    const excluir = () =>{
+        
+    }
 
 
     useEffect(() => {
