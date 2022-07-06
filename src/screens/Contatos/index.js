@@ -1,21 +1,25 @@
 import React from "react";
-import { StatusBar, Text , View, Image, Linking } from 'react-native';
+import { StatusBar, Text , View, Image, Linking, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { ScrollView } from 'react-native';
 import styles from './style'
 //import { Link } from '@react-navigation/native';
-
+import marcelo from '../../../assets/marcelo.jpg'
+import thatto from '../../../assets/thatto.jpg'
+import matheus from '../../../assets/thatto.jpg'
+import douglas from '../../../assets/thatto.jpg'
+import rayssa from '../../../assets/thatto.jpg'
+import rodrigo from '../../../assets/thatto.jpg'
 
 const Contatos = () => {
     
     return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView style={styles.container}>
     
           <View>
             <Text style={styles.titulo}>Contatos</Text>
           </View>
     
-          <Image style={styles.img} source={{ }} />
+          <Image style={styles.img} source={douglas} />
           <View style={styles.card}>
             <Text style={styles.baseText}>Douglas Moreira</Text>
             <View style={styles.icon}>
@@ -27,7 +31,7 @@ const Contatos = () => {
           </View>
     
     
-          <Image style={styles.img} source={{ }} />
+          <Image style={styles.img} source={marcelo} />
     
           <View style={styles.card}>
     
@@ -55,7 +59,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{}} />
+          <Image style={styles.img} source={matheus} />
     
           <View style={styles.card}>
     
@@ -69,7 +73,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{  }} />
+          <Image style={styles.img} source={rodrigo} />
     
           <View style={styles.card}>
     
@@ -83,7 +87,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{}} />
+          <Image style={styles.img} source={rayssa} />
     
           <View style={styles.card}>
     
@@ -97,7 +101,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{}} />
+          <Image style={styles.img} source={thatto} />
     
           <View style={styles.card}>
     
