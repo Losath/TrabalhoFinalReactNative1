@@ -1,10 +1,9 @@
 import React from "react";
-import { View, Text } from "react-native"
-import { StatusBar, Text, View, Image, Linking } from 'react-native';
+import { StatusBar, Text , View, Image, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { ScrollView } from 'react-native';
-import { styles } from './styles'
-import { Link } from '@react-navigation/native';
+import styles from './style'
+//import { Link } from '@react-navigation/native';
 
 
 const Contatos = () => {

@@ -24,7 +24,7 @@ function Login()  {
         if ( usuario === user && senha === password) {
             setLoading(true)
             alert("Loguei CaRaY")
-            navigation.navigate("Produto");
+            navigation.navigate("Drawer");
             
         }else {
             setLoading(false)
