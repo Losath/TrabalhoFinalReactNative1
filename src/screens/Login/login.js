@@ -29,7 +29,6 @@ function Login({setSigin}) {
         setLoading(true)
         if (usuario === user && senha === password) {
             setSigin(true)
-            // navigation.navigate("Drawer");
         } else {
             setLoading(false)
             alert("Login ou senha inválidos! Tente novamente!")
@@ -38,7 +37,7 @@ function Login({setSigin}) {
 
     return (
         <KeyBoardView >
-            {/* <Header/> */}
+          
             <Container >
                 <Image source={logo} />
                 <TextInput

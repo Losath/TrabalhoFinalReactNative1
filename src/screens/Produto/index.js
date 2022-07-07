@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import ListaProdutos from '../../Components/componentsCRUD/flatList';
-import ModalList from '../../Components/componentsCRUD/modal';
 import {getProdutos} from '../../service/axios'
 import api from '../../service/api';
 
