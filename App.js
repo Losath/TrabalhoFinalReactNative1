@@ -4,6 +4,7 @@ import RotasPrivadas from './src/Routes/RotasPrivadas'
 //import Login from './src/screens/Login/login';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from "@react-navigation/native";
+import 'react-native-gesture-handler';
 
 const App = () => {
   return (
