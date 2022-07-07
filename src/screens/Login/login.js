@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles, { KeyBoardView, 
     Container, 
     TextInput,
@@ -7,14 +7,17 @@ import styles, { KeyBoardView,
 import { Text, Image} from "react-native";
 import logo from '../../../assets/Logo.png'
 import { useNavigation } from "@react-navigation/native";
+// import { AuthContext } from "../../context/context";
 
 
 
 
 function Login()  {
+    
     const navigation = useNavigation()
+    // const {user, password} = useContext(AuthContext)
     const [loading, setLoading] = useState(false)
-    const user="Aluno"
+     const user="Aluno"
     const password= "123"
     const [usuario, setUsuario] = useState("")
     const [senha, setSenha] = useState("")

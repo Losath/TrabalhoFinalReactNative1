@@ -17,8 +17,8 @@
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Contatos from "../screens/Contatos";
-//import Logout from "../screens/Logout/logout";
 import Produto from "../screens/Produto";
+// import Logout from "../screens/Logout";
 
 const Drawer = createDrawerNavigator();
 
