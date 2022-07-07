@@ -58,10 +58,10 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
                         <Text style={{color: "white"}}>+</Text>
             </TouchableOpacity> 
             <FlatList
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => item.idProduto}
             data={produtos}
             renderItem= {({ item }) => (
-                <View style={styles.box}>
+                <View  style={styles.box}>
                     <View  style={styles.product}>
                         <Text style={{fontWeight: "bold", fontSize: 16}}>Produto : {item.nomeProduto}</Text>
                         <Text>Cod. Prod. : {item.idProduto}</Text>
@@ -73,7 +73,7 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
                        onPress={()=> {editar(item)}}  >
                         <Text style={{color: "white"}}>Editar</Text>
                     </TouchableOpacity> 
-                    <TouchableOpacity style={styles.botoes}  onPress={()=> {excluir(item.idProduto)}} >
+                    <TouchableOpacity  style={styles.botoes}  onPress={()=> {excluir(item.idProduto)}} >
                         <Text style={{color: "white"}}>Excluir</Text>
                     </TouchableOpacity>
                     </View>
@@ -81,7 +81,7 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
             )}
             />
 
-            <ModalList toggleModal={toggleModal} isModalVisible={isModalVisible} editarProduto={editarProduto} adicionarProduto={adicionarProduto} salvar={salvar} cancelar={cancelar} nome={nome} setNome={setNome} custo={custo} setCusto={setCusto}
+            <ModalList  toggleModal={toggleModal} isModalVisible={isModalVisible} editarProduto={editarProduto} adicionarProduto={adicionarProduto} salvar={salvar} cancelar={cancelar} nome={nome} setNome={setNome} custo={custo} setCusto={setCusto}
     preco={preco} setPreco={setPreco} descricao={descricao} setDescricao={setDescricao}
     quantidade={quantidade} setQuantidade={setQuantidade} categoria={categoria} setCategoria={setCategoria} editando={editando}/>
         </View>
