@@ -1,21 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
+import { useEffect } from "react";
 
-const Logout = ({loading}) => {
-    const navigation = useNavigation();
-
-    // useEffect(() => {
-    //     navigation.navigate("Login")
-
-    // }, []);
-
-    const sair = () => {
-        setLoading(false)
-    }
+const Logout = ({setSigin}) => {
+   
+    useEffect (()=> {
+        setSigin(false)
+    },[])
 
     return (
-        <>
-            {sair}
-        </>
+        <></>
     );
 
 }

@@ -20,12 +20,12 @@ import Contatos from "../screens/Contatos";
 import Produto from "../screens/Produto";
 import React from "react";
 // import Logout from "../screens/Logout";
+import Logout from "../screens/Logout";
 
 const Drawer = createDrawerNavigator();
 
-const MyDrawer = () => {
+const MyDrawer = ({setSigin}) => {
     return (
-        
         <Drawer.Navigator 
         useLegacyImplementation
         screenOptions={{
@@ -40,13 +40,12 @@ const MyDrawer = () => {
           },
         }}
       >
-               
-           
-            <Drawer.Screen   name="Produto"  component={Produto}  />
-            <Drawer.Screen name="Contatos" component={Contatos} />
-            {/* <Drawer.Screen name="Logout" component={Logout} /> */}
-        </Drawer.Navigator>
-        
+                <Drawer.Screen name="Produto" component={Produto} />
+                <Drawer.Screen name="Contatos" component={Contatos} />
+                <Drawer.Screen name="Logout" >
+                    {(props)=>{return <Logout {...props} setSigin={setSigin}/>}}
+                </Drawer.Screen>
+            </Drawer.Navigator>
     );
 };
 
