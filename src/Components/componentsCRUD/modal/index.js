@@ -115,6 +115,7 @@ const ModalList = ({
                 <TextInput
                   style={styles3.input}
                   placeholder={"R$ 7.000"}
+                  keyboardType="numeric"
                   value={custo}
                   onChangeText={(text) => setCusto(text)}
                 />
@@ -154,6 +155,7 @@ const ModalList = ({
                 <TextInput
                   style={styles3.input}
                   placeholder={"R$ 7.000"}
+                  keyboardType="numeric"
                   value={preco}
                   onChangeText={(text) => setPreco(text)}
                 />

@@ -58,7 +58,6 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
                         <Text style={{color: "white"}}>+</Text>
             </TouchableOpacity> 
             <FlatList
-            //numColumns={2}
             keyExtractor={(item) => item.id}
             data={produtos}
             renderItem= {({ item }) => (
