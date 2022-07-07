@@ -1,21 +1,21 @@
 import React from "react";
-import { StatusBar, Text, View, Image, Linking } from 'react-native';
+import { StatusBar, Text, View, Image, Linking, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { ScrollView } from 'react-native';
-import styles from './style'
-//import { Link } from '@react-navigation/native';
-
+import { styles } from './style'
+import marcelo from '../../../assets/marcelo.jpg'
+import thatto from '../../../assets/thatto.jpg'
+import matheus from '../../../assets/matheus.jpg'
+import douglas from '../../../assets/douglas.jpg'
+import rayssa from '../../../assets/rayssa.jpg'
+import rodrigo from '../../../assets/rodrigo.jpg'
+import duda from '../../../assets/duda.jpg'
 
 const Contatos = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
 
-      <View>
-        <Text style={styles.titulo}>Contatos</Text>
-      </View>
-
-      <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993669880182214666/PHOTO-2022-07-04-20-44-50.jpg' }} />
+      <Image style={styles.img} source={douglas} />
       <View style={styles.card}>
         <Text style={styles.baseText}>Douglas Moreira</Text>
         <View style={styles.icon}>
@@ -27,7 +27,7 @@ const Contatos = () => {
       </View>
 
 
-      <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993677447918792744/PHOTO-2022-07-04-21-37-41.jpg' }} />
+      <Image style={styles.img} source={marcelo} />
 
       <View style={styles.card}>
 
@@ -41,7 +41,7 @@ const Contatos = () => {
 
       </View>
 
-      <Image style={styles.img} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} />
+      <Image style={styles.img} source={duda} />
 
       <View style={styles.card}>
 
@@ -55,7 +55,7 @@ const Contatos = () => {
 
       </View>
 
-      <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993669490934034574/IMG_7676.jpg' }} />
+      <Image style={styles.img} source={matheus} />
 
       <View style={styles.card}>
 
@@ -69,21 +69,7 @@ const Contatos = () => {
 
       </View>
 
-      <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/981604231809208390/993665187217424484/46912843_1917505221671329_2213806137847840768_n.jpg' }} />
-
-      <View style={styles.card}>
-
-        <Text style={styles.baseText}>Rodrigo Ramos</Text>
-        <View style={styles.icon}>
-          <Icon name="facebook" size={30} color="white" onPress={() => { Linking.openURL('https://www.facebook.com/rodrigo.ramos.37051') }} />
-          <Icon name="instagram" size={30} color="white" onPress={() => { Linking.openURL('https://www.instagram.com/rodrigomramos/') }} />
-          <Icon name="linkedin" size={30} color="white" onPress={() => { Linking.openURL('https://www.linkedin.com/in/rodrigo-ramos-048383b4/') }} />
-          <Icon name="github" size={30} color="white" onPress={() => { Linking.openURL('https://github.com/rodrigomramos21') }} />
-        </View>
-
-      </View>
-
-      <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993670159665463427/PHOTO-2022-07-04-20-35-21.jpg' }} />
+      <Image style={styles.img} source={rayssa} />
 
       <View style={styles.card}>
 
@@ -97,7 +83,23 @@ const Contatos = () => {
 
       </View>
 
-      <Image style={styles.img} source={{ uri: 'https://cdn.discordapp.com/attachments/759441341175300117/993678031581364284/PHOTO-2022-07-04-21-41-04.jpg' }} />
+      <Image style={styles.img} source={rodrigo} />
+
+      <View style={styles.card}>
+
+        <Text style={styles.baseText}>Rodrigo Ramos</Text>
+        <View style={styles.icon}>
+          <Icon name="facebook" size={30} color="white" onPress={() => { Linking.openURL('https://www.facebook.com/rodrigo.ramos.37051') }} />
+          <Icon name="instagram" size={30} color="white" onPress={() => { Linking.openURL('https://www.instagram.com/rodrigomramos/') }} />
+          <Icon name="linkedin" size={30} color="white" onPress={() => { Linking.openURL('https://www.linkedin.com/in/rodrigo-ramos-048383b4/') }} />
+          <Icon name="github" size={30} color="white" onPress={() => { Linking.openURL('https://github.com/rodrigomramos21') }} />
+        </View>
+
+      </View>
+
+
+
+      <Image style={styles.img} source={thatto} />
 
       <View style={styles.card}>
 
@@ -114,7 +116,7 @@ const Contatos = () => {
       <StatusBar style="auto" />
 
     </ScrollView>
-  )
+  );
 }
-export default Contatos
 
+export default Contatos;

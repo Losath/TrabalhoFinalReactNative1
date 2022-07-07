@@ -42,7 +42,7 @@ const Stack = createNativeStackNavigator();
 const RotasPrivadas = () => {
 
   return (
-    <Stack.Navigator nitialRouteName="Drawer">
+    <Stack.Navigator >
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Drawer" component={MyDrawer} options={{ headerShown: false }} />
       <Stack.Screen name="Contatos" component={Contatos} />

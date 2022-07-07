@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles, { KeyBoardView, 
-    Title, 
     Container, 
     TextInput,
     Button
