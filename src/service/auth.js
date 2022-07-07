@@ -7,7 +7,7 @@ export const login = () => {
             email: "oi@gmail",
             senha: "123"
           },
-          //token: "skldjfdsjklh23962579oashlasflhfl20382fslkdfskdf",
+         
         });
       }, 2000);
     });
