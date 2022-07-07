@@ -44,7 +44,7 @@ const RotasPrivadas = () => {
 
   return (
     <Stack.Navigator >
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
       <Stack.Screen name="Drawer" component={MyDrawer} options={{ headerShown: false }} />
       <Stack.Screen name="Contatos" component={Contatos} />
       <Stack.Screen name="Produto" component={Produto} />
