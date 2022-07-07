@@ -2,10 +2,11 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-      flex: 1,
+     
       backgroundColor: '#fff',
       alignItems: 'center',
-      padding:20  
+      padding:20 ,
+      
   
     },
     titulo:{
@@ -14,16 +15,16 @@ export const styles = StyleSheet.create({
     },
     card: {
       backgroundColor: 'rgba(64, 0, 80, 0.7)',
-      width: "50%",
-      height: "6%",
+      borderColor: 'rgba(1, 10, 1, 0.40)',
+      borderBottomWidth:5,
+      borderRightWidth:5,
+      width: 220,
+      height: 70,
       justifyContent: 'space-evenly',     
       marginBottom:20,
       marginTop:5,
       borderRadius:8
   
-    },
-    card1:{
-        
     },
     baseText: {
       color: 'white',

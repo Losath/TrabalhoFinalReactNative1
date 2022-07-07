@@ -36,17 +36,19 @@ import MyDrawer from "./Drawer";
 import Login from "../screens/Login/login";
 import Produto from "../screens/Produto";
 import Contatos from "../screens/Contatos";
+import Logout from "../screens/Logout";
 
 const Stack = createNativeStackNavigator();
 
 const RotasPrivadas = () => {
 
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
+    <Stack.Navigator >
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
       <Stack.Screen name="Drawer" component={MyDrawer} options={{ headerShown: false }} />
       <Stack.Screen name="Contatos" component={Contatos} />
-      {/* <Stack.Screen name="Produto" component={Produto} /> */}
+      <Stack.Screen name="Produto" component={Produto} />
+     <Stack.Screen name="Logout" component={Logout} />
     </Stack.Navigator>
   );
 };

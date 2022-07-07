@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native
 import { getProdutos } from '../../../service/axios'
 import ModalList from '../modal'
 
+
 const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, excluirProduto,
     nome,
     setNome,
@@ -23,15 +24,19 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
     salvar,}) => {
     const [loading, setLoading] = useState(true);
     const [isModalVisible, setModalVisible] = useState(false);
+    const [contador, setContador] = useState([0])
 
     const toggleModal = () => {
     setModalVisible(!isModalVisible)
-    // editarProduto();
+    
     }
-
-    const adicionar = () => {
-        setModalVisible(!isModalVisible)
-        adicionarProduto()
+    const excluir = (id) =>{
+        excluirProduto(id)
+        setContador(contador+1)
+    }
+    const editar =(prod)=>{
+        editarProduto(prod)
+        toggleModal()
     }
 
 
@@ -43,30 +48,32 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
             setLoading(false);
         }
         get()
-    }, [])
+    }, [contador])
 
     return(
         <View style={styles.container}>
-            <TouchableOpacity style={[styles.botoes, {marginBottom: 10, backgroundColor: "blue"}]}  onPress={toggleModal} >
-                        <Text style={{color: "white"}}>Add</Text>
+            <TouchableOpacity style={[styles.botoes, {marginBottom: 20, borderRadius: 8,borderColor: "rgba(1, 10, 1, 0.40)",
+        borderBottomWidth:3,
+        borderRightWidth:3, width:40, height:40, backgroundColor: "rgba(64, 0, 80, 0.71)"}]}  onPress={toggleModal} >
+                        <Text style={{color: "white"}}>+</Text>
             </TouchableOpacity> 
             <FlatList
-            //numColumns={2}
             keyExtractor={(item) => item.id}
             data={produtos}
             renderItem= {({ item }) => (
                 <View style={styles.box}>
                     <View  style={styles.product}>
                         <Text style={{fontWeight: "bold", fontSize: 16}}>Produto : {item.nomeProduto}</Text>
-                        <Text>Cod. Prod. : {item.id}</Text>
+                        <Text>Cod. Prod. : {item.idProduto}</Text>
                         <Text>Preço : {item.precoUnitario}</Text>
                         <Text>Quantidade: {item.quantidadeEstoque}</Text>
                     </View>
                     <View>
-                     <TouchableOpacity style={[styles.botoes, {marginBottom: 10, backgroundColor: "blue"}]}  onPress={toggleModal} >
+                     <TouchableOpacity style={[styles.botoes, {marginBottom: 10, backgroundColor: "rgba(64, 0, 80, 0.80)"}]}
+                       onPress={()=> {editar(item)}}  >
                         <Text style={{color: "white"}}>Editar</Text>
                     </TouchableOpacity> 
-                    <TouchableOpacity style={styles.botoes}  onPress={toggleModal} >
+                    <TouchableOpacity style={styles.botoes}  onPress={()=> {excluir(item.idProduto)}} >
                         <Text style={{color: "white"}}>Excluir</Text>
                     </TouchableOpacity>
                     </View>
@@ -86,19 +93,19 @@ export default ListaProdutos;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         paddingTop: 40,
         paddingHorizontal: 20
     },
     product: {
         width: "80%",
-        height: 80,
-        padding: 30,
+        height: 90,
+        padding: 20,
         justifyContent: "center"  
         
     },
     botoes : {
-        backgroundColor: "red",
+        backgroundColor: " rgba(255, 0, 0, 0.59)",
         width: 60,
         height: 30,
         justifyContent: "center",
@@ -112,12 +119,13 @@ const styles = StyleSheet.create({
     box: {
         flex: 1,
         flexDirection: "row",
-        marginBottom: 10,
-        backgroundColor: "cyan",
+        marginBottom: 15,
+        backgroundColor: "rgba(64, 0, 80, 0.2)",
+        borderColor: "rgba(1, 10, 1, 0.40)",
+        borderBottomWidth:5,
+        borderRightWidth:5,
         alignItems: "center",
         justifyContent: "center",
-        borderWidth: 2,
-        borderColor: "black",
         borderRadius: 10
     }
 
