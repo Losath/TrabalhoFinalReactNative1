@@ -29,7 +29,6 @@ function Login()  {
         }else {
             setLoading(false)
             alert("Login ou senha inválido, tente novamente!")
-            
         }
         
     };

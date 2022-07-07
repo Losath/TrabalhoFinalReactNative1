@@ -4,14 +4,17 @@ import RotasPrivadas from './src/Routes/RotasPrivadas'
 //import Login from './src/screens/Login/login';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from "@react-navigation/native";
+import Login from './src/screens/Login/login';
 
-const App = () => {
+const App = ({loading}) => {
+  console.log("loading")
   return (
     <>
       <NavigationContainer>
         <AuthProvider>
+          {/* <RotasPrivadas/> */}
+          {/* {!!loading ? <RotasPrivadas/> : <Login/>} */}
           <RotasPrivadas/>
-          {/* <Login/> */}
           <StatusBar style="auto" />
         </AuthProvider>
       </NavigationContainer>
