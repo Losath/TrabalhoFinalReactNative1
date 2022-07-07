@@ -13,7 +13,7 @@ import { AuthContext } from "../../context/context";
 
 
 
-function Login() {
+function Login({setSigin}) {
     // const user = "Aluno"
     // const password = "123"
 
@@ -23,10 +23,13 @@ function Login() {
     const [usuario, setUsuario] = useState("")
     const [senha, setSenha] = useState("")
 
+    console.log(setSigin)
     const logar = () => {
+        
         setLoading(true)
         if (usuario === user && senha === password) {
-            navigation.navigate("Drawer");
+            setSigin(true)
+            // navigation.navigate("Drawer");
         } else {
             setLoading(false)
             alert("Login ou senha inválidos! Tente novamente!")
@@ -56,7 +59,7 @@ function Login() {
                     <Button onPress={() => logar()} >
                         <Text style={styles.btn}>Login</Text>
                     </Button>
-                    : <ActivityIndicator />
+                    : <ActivityIndicator size="large" color="rgba(64, 0, 80, 0.80)"/>
                 }
 
             </Container>

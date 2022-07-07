@@ -165,6 +165,7 @@ const ModalList = ({
                 <TextInput
                   style={styles3.input}
                   placeholder={"5"}
+                  keyboardType="numeric"
                   value={quantidade}
                   onChangeText={(text) => setQuantidade(text)}
                 />
@@ -178,13 +179,13 @@ const ModalList = ({
               onPress={salvarEdicao}
               style={[styles.botoes, { backgroundColor: "green" }]}
             >
-              <Text>Salvar</Text>
+              <Text style={{color: "white"}} >Salvar</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={cancelaInput}
               style={[styles.botoes, { backgroundColor: "red" }]}
             >
-              <Text>Cancelar</Text>
+              <Text style={{color: "white"}} >Cancelar</Text>
             </TouchableOpacity>
             </View>
       ):(
@@ -193,15 +194,15 @@ const ModalList = ({
             >
             <TouchableOpacity
               onPress={adicionar}
-              style={[styles.botoes, { backgroundColor: "green" }]}
+              style={[styles.botoes, { backgroundColor: "rgba(64, 0, 80, 0.71)" }]}
             >
-              <Text>Adicionar</Text>
+              <Text style={{color: "white"}}>Adicionar</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={cancelaInput}
               style={[styles.botoes, { backgroundColor: "red" }]}
             >
-              <Text>Cancelar</Text>
+              <Text style={{color: "white"}} >Cancelar</Text>
             </TouchableOpacity>
           </View>
           )}

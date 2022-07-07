@@ -22,12 +22,14 @@ import Logout from "../screens/Logout";
 
 const Drawer = createDrawerNavigator();
 
-const MyDrawer = () => {
+const MyDrawer = ({setSigin}) => {
     return (
-            <Drawer.Navigator>
+            <Drawer.Navigator >
                 <Drawer.Screen name="Produto" component={Produto} />
                 <Drawer.Screen name="Contatos" component={Contatos} />
-                <Drawer.Screen name="Logout" component={Logout} />
+                <Drawer.Screen name="Logout" >
+                    {(props)=>{return <Logout {...props} setSigin={setSigin}/>}}
+                </Drawer.Screen>
             </Drawer.Navigator>
     );
 };

@@ -1,27 +1,21 @@
-// import React from "react";
-// import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import Login from "../screens/Login/login";
-// import Produto from "../screens/Produto";
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Login from "../screens/Login/login";
+import Produto from "../screens/Produto";
 
 
-// const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
-// const RotasPublicas = () => {
-//   return (
-//     <Stack.Navigator>
-//       <Stack.Screen
-//         name="Login"
-//         component={Login}
-//         options={{ headerShown: false }}
-//         //chamo o drawer aqui?
-//       />
-//         <Stack.Screen
-//         name="Produto"
-//         component={Produto}
-//        //options={{ headerShown: false }}
-//       />
-//     </Stack.Navigator>
-//   );
-// };
+const RotasPublicas = ({setSigin}) => {
+    console.log(setSigin)
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Login" options={{ headerShown: false }}>
+            {(props)=>{return <Login {...props} setSigin={setSigin}/>}}
+        </Stack.Screen>
+    </Stack.Navigator>
+  );
+};
 
-// export default RotasPublicas;
+export default RotasPublicas;

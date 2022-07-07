@@ -40,12 +40,14 @@ import Logout from "../screens/Logout";
 
 const Stack = createNativeStackNavigator();
 
-const RotasPrivadas = () => {
+const RotasPrivadas = ({setSigin}) => {
 
   return (
     <Stack.Navigator >
-      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-      <Stack.Screen name="Drawer" component={MyDrawer} options={{ headerShown: false }} />
+      {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} /> */}
+      <Stack.Screen name="Drawer"  options={{ headerShown: false }} >
+        {(props)=> {return <MyDrawer {...props} setSigin={setSigin}/>}}
+      </Stack.Screen>
       <Stack.Screen name="Contatos" component={Contatos} />
       <Stack.Screen name="Produto" component={Produto} />
      <Stack.Screen name="Logout" component={Logout} />
