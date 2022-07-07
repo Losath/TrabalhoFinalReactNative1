@@ -64,18 +64,13 @@ const ListaProdutos = ({ produtos, setProdutos, editarProduto, excluirProduto,
 
     return(
         <View style={styles.container}>
-            <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+            
                     <TouchableOpacity style={[styles.botoes, {marginBottom: 20, borderRadius: 8,borderColor: "rgba(1, 10, 1, 0.40)",
                 borderBottomWidth:3,
                 borderRightWidth:3, width:40, height:40, backgroundColor: "rgba(64, 0, 80, 0.71)"}]}  onPress={toggleModal} >
                                 <Text style={{color: "white"}}>+</Text>
                     </TouchableOpacity> 
-                    <TouchableOpacity style={[styles.botoes, {marginBottom: 20, borderRadius: 8,borderColor: "rgba(64, 0, 80, 0.71)",
-                borderBottomWidth:3,
-                borderRightWidth:3, width:60, height:40, backgroundColor: "rgba(64, 0, 80, 0.5)"}]}  onPress={sair} >
-                                <Text style={{color: "black"}}>LogOut</Text>
-                    </TouchableOpacity> 
-            </View>
+            
             {!loading ? ( 
             <FlatList
             keyExtractor={(item) => item.idProduto}
