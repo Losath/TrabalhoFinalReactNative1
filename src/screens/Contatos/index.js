@@ -1,23 +1,19 @@
 import React from "react";
 import { StatusBar, Text , View, Image, Linking, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import styles from './style'
-//import { Link } from '@react-navigation/native';
+import {styles} from './style'
 import marcelo from '../../../assets/marcelo.jpg'
 import thatto from '../../../assets/thatto.jpg'
-import matheus from '../../../assets/thatto.jpg'
-import douglas from '../../../assets/thatto.jpg'
-import rayssa from '../../../assets/thatto.jpg'
-import rodrigo from '../../../assets/thatto.jpg'
+import matheus from '../../../assets/matheus.jpg'
+import douglas from '../../../assets/douglas.jpg'
+import rayssa from '../../../assets/rayssa.jpg'
+import rodrigo from '../../../assets/rodrigo.jpg'
+import duda from '../../../assets/duda.jpg'
 
 const Contatos = () => {
     
     return (
-        <ScrollView style={styles.container}>
-    
-          <View>
-            <Text style={styles.titulo}>Contatos</Text>
-          </View>
+        <ScrollView contentContainerStyle={styles.container}>
     
           <Image style={styles.img} source={douglas} />
           <View style={styles.card}>
@@ -45,7 +41,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} />
+          <Image style={styles.img} source={duda} />
     
           <View style={styles.card}>
     
@@ -72,6 +68,20 @@ const Contatos = () => {
             </View>
     
           </View>
+          
+          <Image style={styles.img} source={rayssa} />
+    
+          <View style={styles.card}>
+    
+            <Text style={styles.baseText}>Rayssa Medeiros</Text>
+            <View style={styles.icon}>
+              <Icon name="facebook" size={30} color="white" onPress={() => { Linking.openURL('https://www.facebook.com/rayssa.medeiros.921677') }} />
+              <Icon name="instagram" size={30} color="white" onPress={() => { Linking.openURL('https://instagram.com/ray_mdrs?igshid=YmMyMTA2M2Y=') }} />
+              <Icon name="linkedin" size={30} color="white" onPress={() => { Linking.openURL('https://www.linkedin.com/in/rayssa-medeiros-a443ba210') }} />
+              <Icon name="github" size={30} color="white" onPress={() => { Linking.openURL('https://github.com/rayssamt') }} />
+            </View>
+    
+          </View>
     
           <Image style={styles.img} source={rodrigo} />
     
@@ -87,19 +97,7 @@ const Contatos = () => {
     
           </View>
     
-          <Image style={styles.img} source={rayssa} />
-    
-          <View style={styles.card}>
-    
-            <Text style={styles.baseText}>Rayssa Medeiros</Text>
-            <View style={styles.icon}>
-              <Icon name="facebook" size={30} color="white" onPress={() => { Linking.openURL('https://www.facebook.com/rayssa.medeiros.921677') }} />
-              <Icon name="instagram" size={30} color="white" onPress={() => { Linking.openURL('https://instagram.com/ray_mdrs?igshid=YmMyMTA2M2Y=') }} />
-              <Icon name="linkedin" size={30} color="white" onPress={() => { Linking.openURL('https://www.linkedin.com/in/rayssa-medeiros-a443ba210') }} />
-              <Icon name="github" size={30} color="white" onPress={() => { Linking.openURL('https://github.com/rayssamt') }} />
-            </View>
-    
-          </View>
+          
     
           <Image style={styles.img} source={thatto} />
     
@@ -120,5 +118,5 @@ const Contatos = () => {
         </ScrollView>
     )
 }
-export default Contatos
+export default Contatos;
 
