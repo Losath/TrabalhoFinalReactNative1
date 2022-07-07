@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusBar, Text, View, Image, Linking, ScrollView } from 'react-native';
+import { StatusBar, Text, View, Image, Linking, ScrollView,ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { styles } from './style'
 import marcelo from '../../../assets/marcelo.jpg'
@@ -13,8 +13,11 @@ import duda from '../../../assets/duda.jpg'
 const Contatos = () => {
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-
+   
+<View style={styles.bk}>
+    <ImageBackground source={require('../../../assets/bk.jpg')} style={styles.imageBackground}>
+      
+      <ScrollView contentContainerStyle={styles.container}>
       <Image style={styles.img} source={douglas} />
       <View style={styles.card}>
         <Text style={styles.baseText}>Douglas Moreira</Text>
@@ -116,6 +119,8 @@ const Contatos = () => {
       <StatusBar style="auto" />
 
     </ScrollView>
+    </ImageBackground>
+  </View>
   );
 }
 

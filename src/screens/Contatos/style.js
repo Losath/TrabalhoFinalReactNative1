@@ -2,8 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-     
-      backgroundColor: '#fff',
+      
       alignItems: 'center',
       padding:20 ,
       
@@ -14,8 +13,8 @@ export const styles = StyleSheet.create({
         marginBottom: 10        
     },
     card: {
-      backgroundColor: 'rgba(64, 0, 80, 0.7)',
-      borderColor: 'rgba(1, 10, 1, 0.40)',
+      backgroundColor: 'rgb(90, 30, 90)',
+      borderColor: 'rgba(255, 255, 255, 0.60)',
       borderBottomWidth:5,
       borderRightWidth:5,
       width: 220,
@@ -42,8 +41,29 @@ export const styles = StyleSheet.create({
     img:{
       width:150,
       height:150,
-      borderRadius:8  
+      borderRadius:8
       
+    },
+    bk: {
+      flex: 1,
+      flexDirection: "column"
+    },
+    imageBackground: {
+      flex: 1,
+      resizeMode: "cover",
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    imageForeground: {
+      width: 250,
+      height: 250
+    },
+    text: {
+      color: "white",
+      fontSize: 42,
+      fontWeight: "bold",
+      textAlign: "center"
     }
-    })  ;
+  });
+   
 
