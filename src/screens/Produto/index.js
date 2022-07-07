@@ -16,11 +16,11 @@ const Produto = () => {
     const [editando, setEditando] = useState({ edit: false, id: null })
     const { tasks } = getProdutos()
     const [produtos, setProdutos] = useState([])
+    const [contador, setContador] = useState([])
 
     useEffect(() => {
         if (!tasks) return
         setProdutos(tasks)
-       // setIdProduto(tasks.length)
     }, [tasks])
 
     const adicionarProduto = async () => {
@@ -81,10 +81,11 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ "idCategoria": 0  })
+        setCategoria({ "idCategoria": 1  })
     }
 
     const salvar = async () => {
+        console.log("antes de salvar")
         const produtoEditado = {
             nomeProduto: nomeProduto,
             custo: custo,
@@ -93,19 +94,22 @@ const Produto = () => {
             quantidadeEstoque: quantidadeEstoque,
             categoria: categoria
         }
+        
 
         const { data } = await api.put(`/produtos/${editando.idProduto}`, produtoEditado)
-        //console.log( editando.idProduto)
+        console.log( editando.idProduto)
+
         const produtoseditados = produtos.map(produto => {
             console.log(produto.idProduto, data.idProduto)
             if (produto.idProduto === editando.idProduto) {
-                
+                alert("PRODUTO ALTERADO COM SUCESSO!")
                 return {
                     idProduto: produto.idProduto,
                     ...produtoEditado
-                }
+                } 
             }
             return produto
+            
         })
         
         console.log("depois de produtos editads")
@@ -116,7 +120,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ "idCategoria": 0  })
+        setCategoria({ "idCategoria": 1 })
 
     }
     

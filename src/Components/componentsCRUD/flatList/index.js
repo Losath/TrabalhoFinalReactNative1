@@ -24,18 +24,19 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
     salvar,}) => {
     const [loading, setLoading] = useState(true);
     const [isModalVisible, setModalVisible] = useState(false);
+    const [contador, setContador] = useState([0])
 
     const toggleModal = () => {
     setModalVisible(!isModalVisible)
-    // editarProduto();
+    
     }
-
-    const adicionar = () => {
-        setModalVisible(!isModalVisible)
-        adicionarProduto()
+    const excluir = (id) =>{
+        excluirProduto(id)
+        setContador(contador+1)
     }
-    const excluir = () =>{
-        
+    const editar =(prod)=>{
+        editarProduto(prod)
+        toggleModal()
     }
 
 
@@ -47,7 +48,7 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
             setLoading(false);
         }
         get()
-    }, [])
+    }, [contador])
 
     return(
         <View style={styles.container}>
@@ -64,15 +65,16 @@ const ListaProdutos = ({navigation, produtos, setProdutos, editarProduto, exclui
                 <View style={styles.box}>
                     <View  style={styles.product}>
                         <Text style={{fontWeight: "bold", fontSize: 16}}>Produto : {item.nomeProduto}</Text>
-                        <Text>Cod. Prod. : {item.id}</Text>
+                        <Text>Cod. Prod. : {item.idProduto}</Text>
                         <Text>Preço : {item.precoUnitario}</Text>
                         <Text>Quantidade: {item.quantidadeEstoque}</Text>
                     </View>
                     <View>
-                     <TouchableOpacity style={[styles.botoes, {marginBottom: 10, backgroundColor: "rgba(64, 0, 80, 0.80)"}]}  onPress={toggleModal} >
+                     <TouchableOpacity style={[styles.botoes, {marginBottom: 10, backgroundColor: "rgba(64, 0, 80, 0.80)"}]}
+                       onPress={()=> {editar(item)}}  >
                         <Text style={{color: "white"}}>Editar</Text>
                     </TouchableOpacity> 
-                    <TouchableOpacity style={styles.botoes}  onPress={toggleModal} >
+                    <TouchableOpacity style={styles.botoes}  onPress={()=> {excluir(item.idProduto)}} >
                         <Text style={{color: "white"}}>Excluir</Text>
                     </TouchableOpacity>
                     </View>
