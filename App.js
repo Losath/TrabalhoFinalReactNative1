@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import AuthProvider, { AuthContext } from './src/context/context';
 import RotasPrivadas from './src/Routes/RotasPrivadas'
 import { NavigationContainer } from "@react-navigation/native";
-// import { useContext } from 'react';
-
+//import { useContext } from 'react';
+//import Login from './src/screens/Login/login';
 
 const App = () => {
 
@@ -14,8 +14,8 @@ const App = () => {
     <>
       <NavigationContainer>
         <AuthProvider>
-          {/* {!!user ? <RotasPrivadas/> : <Login/>}  */}
-           <RotasPrivadas/> 
+          {/* {user && password ? <RotasPrivadas/> : <Login/>}  */}
+           <RotasPrivadas/>  
           <StatusBar style="auto" />
         </AuthProvider>
       </NavigationContainer>

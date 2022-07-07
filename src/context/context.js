@@ -4,7 +4,7 @@ import { login } from "../service/auth";
 export const AuthContext = createContext({});
 
 const AuthProvider = ({ children }) => {
-    // const [usuario, setUser] = useState(null);
+    //const [usuario, setUser] = useState(null);
     const user="Aluno"
     const password= "123"
 
