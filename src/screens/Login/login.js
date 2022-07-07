@@ -1,66 +1,64 @@
 import React, { useContext, useState } from "react";
-import styles, { KeyBoardView, 
-    Container, 
+import styles, {
+    KeyBoardView,
+    Container,
     TextInput,
     Button
 } from "./styles";
-import { Text, Image} from "react-native";
+import { Text, Image, ActivityIndicator } from "react-native";
 import logo from '../../../assets/Logo.png'
 import { useNavigation } from "@react-navigation/native";
-// import { AuthContext } from "../../context/context";
+import { AuthContext } from "../../context/context";
 
 
 
 
-function Login()  {
-    
+function Login() {
+    // const user = "Aluno"
+    // const password = "123"
+
     const navigation = useNavigation()
-    // const {user, password} = useContext(AuthContext)
+    const { user, password } = useContext(AuthContext)
     const [loading, setLoading] = useState(false)
-     const user="Aluno"
-    const password= "123"
     const [usuario, setUsuario] = useState("")
     const [senha, setSenha] = useState("")
-    const logar = () => {
 
-        if ( usuario === user && senha === password) {
-            setLoading(true)
-            alert("Loguei CaRaY")
+    const logar = () => {
+        setLoading(true)
+        if (usuario === user && senha === password) {
             navigation.navigate("Drawer");
-            
-        }else {
+        } else {
             setLoading(false)
-            alert("Login ou senha inválido, tente novamente!")
+            alert("Login ou senha inválidos! Tente novamente!")
         }
-        
     };
 
     return (
         <KeyBoardView >
-           
             {/* <Header/> */}
-           
-            
             <Container >
-            <Image source={logo}/>
-                <TextInput  
-                    
+                <Image source={logo} />
+                <TextInput
+
                     placeholderTextColor="rgba(168, 165, 165, 0.62)"
                     placeholder="Login"
-                    onChangeText={text=>setUsuario(text)}
-                    />
+                    onChangeText={text => setUsuario(text)}
+                />
 
-                <TextInput 
-                    
+                <TextInput
+
                     placeholderTextColor="rgba(168, 165, 165, 0.62)"
                     placeholder="Senha"
-                    onChangeText={text=>setSenha(text)}
+                    onChangeText={text => setSenha(text)}
                     secureTextEntry
-                    />
-                <Button onPress={() => logar()} >
-                    <Text style={styles.btn}>Login</Text>
-                </Button>
-             
+                />
+                {!loading ?
+                    <Button onPress={() => logar()} >
+                        <Text style={styles.btn}>Login</Text>
+                    </Button>
+                    : <ActivityIndicator />
+                }
+
             </Container>
         </KeyBoardView>
     )

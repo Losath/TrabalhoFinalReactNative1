@@ -18,17 +18,17 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Contatos from "../screens/Contatos";
 import Produto from "../screens/Produto";
-// import Logout from "../screens/Logout";
+import Logout from "../screens/Logout";
 
 const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {
     return (
-        <Drawer.Navigator>
-            <Drawer.Screen name="Produto" component={Produto} />
-            <Drawer.Screen name="Contatos" component={Contatos} />
-            {/* <Drawer.Screen name="Logout" component={Logout} /> */}
-        </Drawer.Navigator>
+            <Drawer.Navigator>
+                <Drawer.Screen name="Produto" component={Produto} />
+                <Drawer.Screen name="Contatos" component={Contatos} />
+                <Drawer.Screen name="Logout" component={Logout} />
+            </Drawer.Navigator>
     );
 };
 
